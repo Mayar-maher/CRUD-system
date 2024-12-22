@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+<div class=" video-section">
+    <video autoplay muted loop class="background-video"><source src="images/bg-video.mp4" type="video/mp4"></video>
+    <div class="container rounded-3 py-2 text-white">
+        <h1 class="text-white text-center pt-5">CRUD SYSTEM</h1>
+        
+        <div>
+            <label for="nameInput" class="form-label">Product Name</label>
+            <input type="text" id="nameInput" class="form-control" placeholder="enter product name" oninput="nameValidation()">
+        </div>
+        <div id="nameError" class="alert alert-danger d-none">
+            <p>First letter must be capital !</p>
+        </div>
+
+        <div>
+            <label for="priceInput" class="form-label">Product Price</label>
+            <input type="text" id="priceInput" class="form-control" placeholder="enter product price" oninput="priceValidation()">
+        </div>
+        <div id="priceError" class="alert alert-danger d-none">
+            <p>Price must be more than 1000$ !</p>
+        </div>
+
+        <div>
+            <label for="typeInput" class="form-label">Product Type</label>
+            <input type="text" id="typeInput" class="form-control" placeholder="enter product type" oninput="typeValidation()">
+        </div>
+        <div id="typeError" class="alert alert-danger d-none">
+            <p>Type should be [tv , mobile , phone , Laptop , Ipad , Itap]</p>
+        </div>
+
+        <div>
+            <label for="descInput" class="form-label">Product Description</label>
+            <textarea id="descInput" class="form-control" placeholder="enter product description"> </textarea>
+        </div>
+        <div class="py-2 text-center">
+            <button onclick="addProduct()" id="btnChanger" class=" btn btn-dark rounded-pill w-75" type="button">Add Product</button>
+        </div>
+        <div class="pb-5 text-center">
+            <input oninput="searchProduct()" type="search" id="searchInput" class="form-control w-50 mx-auto" placeholder="search by name.....">
+        </div>
+
+        <table class="table bg-transparent text-white">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Type</th>
+                <th scope="col">Desc</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+
+              
+              
+            </tbody>
+          </table>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- ------------------------------ js bootstrap section ------------------  -->
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>
